@@ -1,0 +1,92 @@
+/* Variables */
+$primary-color: #fc1503;
+$secondary-color: #fff;
+$scrollbar-color: rgb(114, 113, 113);
+
+/* Mixins */
+@mixin hover-effect {
+  &:hover {
+    background-color: $primary-color !important;
+    color: $secondary-color !important;
+  }
+}
+
+/* Functions */
+@function calculate-height($height) {
+  @return $height * 10px;
+}
+
+/* Basic styles */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* Customize Scrollbar */
+::-webkit-scrollbar {
+  width: 0px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $scrollbar-color;
+  border-radius: 10px;
+  height: calculate-height(20);
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.category-btn {
+  font-weight: bold !important;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  cursor: pointer;
+  background: transparent;
+  outline: none;
+  border: none;
+
+  padding: 7px 15px;
+  margin: 10px 0px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+
+  @include hover-effect;
+}
+
+/* Reponsiveness for smaller Devices */
+@media screen and (max-width: 900px) {
+  .category-btn {
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .copyright {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .scroll-horizontal {
+    overflow: auto !important;
+  }
+
+  .react-player {
+    height: calculate-height(45) !important;
+  }
+  .search-bar {
+    width: 200px;
+  }
+}
