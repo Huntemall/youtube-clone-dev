@@ -7,10 +7,22 @@ import { CheckCircle } from "@mui/icons-material";
 import { Videos } from "./";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
 
-const VideoDetail = () => {
-  const [videoDetail, setVideoDetail] = useState(null);
-  const [videos, setVideos] = useState(null);
-  const { id } = useParams();
+interface VideoDetail {
+  snippet: {
+    title: string;
+    channelId: string;
+    channelTitle: string;
+  };
+  statistics: {
+    viewCount: string;
+    likeCount: string;
+  };
+}
+
+const VideoDetailComponent: React.FC = () => {
+  const [videoDetail, setVideoDetail] = useState<VideoDetail | null>(null);
+  const [videos, setVideos] = useState<any[] | null>(null);
+  const { id } = useParams<{ id: string }>();
 
   useEffect(() => {
     // fetch video details
@@ -25,7 +37,7 @@ const VideoDetail = () => {
   }, [id]);
 
   // Loading
-  if (!videoDetail?.snippet) return "Loading...";
+  if (!videoDetail?.snippet) return <div>Loading...</div>;
 
   const {
     snippet: { title, channelId, channelTitle },
@@ -95,4 +107,4 @@ const VideoDetail = () => {
   );
 };
 
-export default VideoDetail;
+export default VideoDetailComponent;

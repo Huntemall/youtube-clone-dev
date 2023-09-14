@@ -1,9 +1,14 @@
-import React from "react";
+import React, { FC } from "react";
 import { Stack } from "@mui/material";
 
 import { categories } from "../utils/constants";
 
-const Sidebar = ({ selectedCategory, setSelectedCategory }) => (
+interface SidebarProps {
+  selectedCategory: string;
+  setSelectedCategory: (category: string) => void;
+}
+
+const Sidebar: FC<SidebarProps> = ({ selectedCategory, setSelectedCategory }) => (
   <Stack
     direction="row"
     sx={{

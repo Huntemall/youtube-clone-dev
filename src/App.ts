@@ -10,7 +10,7 @@ import {
   SearchFeed,
 } from "./components";
 
-const App = () => (
+const App: React.FC = () => (
   <BrowserRouter>
     <Box sx={{ backgroundColor: "#000" }}>
       {/* Navbar */}

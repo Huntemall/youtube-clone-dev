@@ -11,7 +11,23 @@ import {
   demoChannelTitle,
 } from "../utils/constants";
 
-const VideoCard = ({
+interface VideoCardProps {
+  video: {
+    id: { videoId: string },
+    snippet: {
+      thumbnails: {
+        high: {
+          url: string
+        }
+      },
+      title: string,
+      channelId: string,
+      channelTitle: string
+    }
+  }
+}
+
+const VideoCard: React.FC<VideoCardProps> = ({
   video: {
     id: { videoId },
     snippet,

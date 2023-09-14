@@ -4,10 +4,10 @@ import { Sidebar, Videos } from "./";
 
 import { fetchFromAPI } from "../utils/fetchFromAPI";
 
-// Feed
-const Feed = () => {
-  const [selectedCategory, setSelectedCategory] = useState("New");
-  const [videos, setVideos] = useState([]);
+// FeedComponent
+const FeedComponent: React.FC = () => {
+  const [selectedCategory, setSelectedCategory] = useState<string>("New");
+  const [videos, setVideos] = useState<any[]>([]);
 
   // fetch videos from api
   useEffect(() => {
@@ -67,4 +67,4 @@ const Feed = () => {
   );
 };
 
-export default Feed;
+export default FeedComponent;

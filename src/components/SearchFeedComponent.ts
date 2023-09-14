@@ -5,9 +5,9 @@ import { useParams } from "react-router-dom";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
 import { Videos } from "./";
 
-const SearchFeed = () => {
-  const [videos, setVideos] = useState([]);
-  const { searchTerm } = useParams();
+const SearchFeedComponent: React.FC = () => {
+  const [videos, setVideos] = useState<any[]>([]);
+  const { searchTerm } = useParams<{ searchTerm: string }>();
 
   // fetch videos from api
   useEffect(() => {
@@ -30,4 +30,4 @@ const SearchFeed = () => {
   );
 };
 
-export default SearchFeed;
+export default SearchFeedComponent;

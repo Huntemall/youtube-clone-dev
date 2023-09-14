@@ -5,11 +5,11 @@ import { Box } from "@mui/material";
 import { Videos, ChannelCard } from "./";
 import { fetchFromAPI } from "../utils/fetchFromAPI";
 
-const ChannelDetail = () => {
-  const [channelDetail, setChannelDetail] = useState(null);
-  const [videos, setVideos] = useState([]);
+const ChannelDetailComponent: React.FC = () => {
+  const [channelDetail, setChannelDetail] = useState<any>(null);
+  const [videos, setVideos] = useState<any[]>([]);
 
-  const { id } = useParams();
+  const { id } = useParams<{ id: string }>();
 
   // fetch channel details from api
   useEffect(() => {
@@ -47,4 +47,4 @@ const ChannelDetail = () => {
   );
 };
 
-export default ChannelDetail;
+export default ChannelDetailComponent;

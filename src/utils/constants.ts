@@ -21,9 +21,9 @@ import LogoImage from "../assets/logo.png";
 import demoThumbnailImage from "../assets/demo-thumbnail.png";
 import demoProfileImage from "../assets/demo-profile.png";
 
-export const logo = LogoImage;
+export const logo: string = LogoImage;
 
-export const categories = [
+export const categories: { name: string, icon: JSX.Element }[] = [
   { name: "New", icon: <HomeIcon /> },
   { name: "Computerphile", icon: <ComputerIcon /> },
   { name: "Coding", icon: <CodeIcon /> },
@@ -43,9 +43,9 @@ export const categories = [
   { name: "Crypto", icon: <DeveloperModeIcon /> },
 ];
 
-export const demoThumbnailUrl = demoThumbnailImage;
-export const demoChannelUrl = "/channel/UC9-y-6csu5WGm29I7JiwpnA";
-export const demoVideoUrl = "/video/BBJa32lCaaY";
-export const demoChannelTitle = "Awesome Channel";
-export const demoVideoTitle = "A Random YouTube Video";
-export const demoProfilePicture = demoProfileImage;
+export const demoThumbnailUrl: string = demoThumbnailImage;
+export const demoChannelUrl: string = "/channel/UC9-y-6csu5WGm29I7JiwpnA";
+export const demoVideoUrl: string = "/video/BBJa32lCaaY";
+export const demoChannelTitle: string = "Awesome Channel";
+export const demoVideoTitle: string = "A Random YouTube Video";
+export const demoProfilePicture: string = demoProfileImage;

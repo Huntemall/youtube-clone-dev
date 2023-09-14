@@ -9,7 +9,32 @@ import {
   demoChannelTitle,
 } from "../utils/constants";
 
-const ChannelCard = ({ channelDetail, marginTop }) => (
+interface ChannelDetail {
+  id: {
+    channelId: string;
+  };
+  snippet: {
+    thumbnails: {
+      high: {
+        url: string;
+      };
+    };
+    title: string;
+  };
+  statistics: {
+    subscriberCount: string;
+  };
+}
+
+interface ChannelCardProps {
+  channelDetail: ChannelDetail;
+  marginTop: number;
+}
+
+const ChannelCard: React.FC<ChannelCardProps> = ({
+  channelDetail,
+  marginTop,
+}) => (
   <Box
     sx={{
       boxShadow: "none",

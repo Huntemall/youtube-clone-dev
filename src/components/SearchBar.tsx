@@ -3,16 +3,16 @@ import { useNavigate } from "react-router-dom";
 import { Paper, IconButton } from "@mui/material";
 import { Search } from "@mui/icons-material";
 
-const SearchBar = () => {
-  const [searchTerm, setSearchTerm] = useState("");
+const SearchBar: React.FC = () => {
+  const [searchTerm, setSearchTerm] = useState<string>("");
   const navigate = useNavigate();
 
   // handle search submit
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     // Check if string is empty or contains whitespaces
-    const isEmptyOrSpaces = (str) => {
+    const isEmptyOrSpaces = (str: string): boolean => {
       return /^\s*$/.test(str);
     };
 
